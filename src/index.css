@@ -1,13 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@tailwind components;
+
+.body {
+  font-family: "Montserrat";
 }
+.navbar {
+  @apply flex justify-between items-center py-4 text-xs md:text-sm 2xl:text-base;
+}
+.nav-container {
+  @apply flex flex-col items-center justify-center md:flex-row;
+}
+.nav-item {
+  @apply mx-4 cursor-pointer py-4 font-semibold  text-gray md:mx-2 2xl:mx-4;
+}
+.nav-item:hover {
+  @apply border-yellow border-b-2;
+}
+.nav-item:active {
+  @apply border-yellow border-b-2 text-light;
+}
+.nav-active {
+  @apply mx-4 cursor-pointer py-4 font-semibold text-light border-yellow border-b-2;
+}
+.nav-btn {
+  @apply py-4 px-12 cursor-pointer text-light font-semibold bg-yellow text-dark rounded-lg md:ml-2;
+}
+.nav-btn-ghost {
+  @apply py-4 px-4  cursor-pointer text-light font-semibold md:mr-2;
+}
+.hero-container {
+  @apply flex flex-col items-center justify-evenly bg-darkGray w-10/12 mx-auto mt-10 lg:p-10 rounded-xl lg:flex-row;
+}
+.hero {
+  @apply bg-darkGray p-2 flex flex-col rounded-lg w-full lg:w-8/12  mx-auto 2xl:p-10 2xl:my-2 lg:mx-0 lg:justify-start;
+}
+.hero-title {
+  @apply text-light text-center font-semibold leading-loose text-lg mb-4 w-10/12 mx-auto  md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl lg:text-left 2xl:w-10/12 2xl:leading-normal lg:mx-0;
+}
+.hero-desc {
+  @apply text-gray text-center leading-loose text-sm my-4  2xl:text-lg 2xl:text-left 2xl:w-6/12 2xl:leading-loose;
+}
+.cta {
+  @apply text-darkGray text-sm bg-yellow  w-6/12  text-center mb-4 py-2 md:w-4/12 mx-auto lg:mx-0  rounded-lg lg:my-2 lg:mr-4 2xl:py-4;
+}
+.cta:active {
+  @apply bg-darkGray text-light;
+}
+.cta-ghost {
+  @apply text-yellow  text-sm border border-yellow   w-6/12  text-center mb-4 py-2 md:w-4/12 mx-auto lg:mx-0 rounded-lg   lg:my-2 lg:mr-4 2xl:py-4;
+}
+.cta-ghost:active {
+  @apply bg-darkGray text-light border-none;
+}
+.card {
+  @apply absolute top-1/2 -translate-y-1/2  w-3/12 text-center;
+}
+.card-top {
+  @apply bg-dark py-8  rounded-t-lg text-light text-4xl font-bold;
+}
+.card-bottom {
+  @apply bg-darkGray text-light mx-auto py-2 rounded-b-lg;
+}
+@tailwind utilities;
