@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import registerImg from "../assets/register.png";
 import { Redirect } from "react-router-dom";
-import axios from "../config.js"
+import axios from "axios"
 
 function Login() {
   const [email, setEmail] = useState(null);
@@ -12,7 +12,7 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("/login", {
+      .post(`${process.env.REACT_APP_REST_API}/login`, {
         email: email,
         password: password,
       })

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import axios from "axios";
 import registerImg from "../assets/register.png";
-import axios from "../config.js"
+import axios from "axios";
 function Register() {
   const [email, setEmail] = useState(null);
   const [number, setNumber] = useState(null);
@@ -19,11 +18,11 @@ function Register() {
       setError("Нууц үг алдаатай байна");
     } else if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
       setError("Email буруу байна");
-    } else if (number.length !== 8 ){
-      setError('Утасны дугаар буруу байна')
-    }else {
+    } else if (number.length !== 8) {
+      setError("Утасны дугаар буруу байна");
+    } else {
       axios
-      .post("/register", {
+        .post(`${process.env.REACT_APP_REST_API}/register`, {
           email: email,
           number: number,
           password: password,
@@ -32,12 +31,10 @@ function Register() {
           setSuccess(true);
         })
         .catch((err) => {
-          // console.log(instance.baseURL)
-       
+          setError(err.response.data.error.message);
         });
     }
   };
-
 
   return (
     //
