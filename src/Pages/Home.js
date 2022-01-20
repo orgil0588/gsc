@@ -22,10 +22,10 @@ function Home(props) {
               <div>Whitepaper</div>
             </DownloadLink>
           </div>
-          <Link className="cta-ghost" to="register">
+          {/* <Link className="cta-ghost" to="register">
             {" "}
             <button className="">Бүртгүүлэх</button>
-          </Link>
+          </Link> */}
         </div>
         <div className="flex justify-between mx-auto text-center text-sm sm:text-base lg:justify-start lg:mx-0 lg:text-left">
           <div className="p-4 mt-4 text-light font-light">

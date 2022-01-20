@@ -57,14 +57,14 @@ function Navbar() {
                     NFT
                   </Link>
                 </ul>
-                <ul className="nav-container">
+                {/* <ul className="nav-container">
                   <Link to="/register" className="nav-btn-ghost">
                     Бүртгүүлэх
                   </Link>
                   <Link to="/login" className="nav-btn">
                     Нэвтрэх
                   </Link>
-                </ul>
+                </ul> */}
               </div>
             </>
           ) : (
@@ -115,7 +115,7 @@ function Navbar() {
           </Link>
         </ul>
 
-        {localStorage.getItem("token") === null ? (
+        {/* {localStorage.getItem("token") === null ? (
           <ul className="nav-container">
             <Link to="/register" className="nav-btn-ghost">
               Бүртгүүлэх
@@ -138,7 +138,7 @@ function Navbar() {
               Гарах
             </Link>
           </ul>
-        )}
+        )} */}
       </div>
     </>
   );
